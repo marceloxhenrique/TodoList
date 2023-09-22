@@ -3,17 +3,18 @@ import React, { useState } from "react";
 import { Item } from "@/types/Item";
 import ListItem from "@/components/ListItem";
 import AddItem from "@/components/AddItem";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Home() {
   const [list, setList] = useState<Item[]>([
-    { id: 1, name: "Go to the bakary", done: false },
-    { id: 2, name: "Go to supermaket", done: true },
+    { id: "1", name: "Go to the bakary", done: false },
+    { id: "2", name: "Go to supermaket", done: true },
   ]);
 
   const handleAddNewItem = (taskname: string) => {
     let newList = [...list];
     newList.push({
-      id: list.length + 1,
+      id: uuidv4(),
       name: taskname,
       done: false,
     });
@@ -22,7 +23,11 @@ export default function Home() {
 
   const deleteTask = (task: Item) => {
     const newList = [...list];
-    newList.splice(task.id - 1, 1);
+    const toDelete = list.findIndex((item) => {
+      return item.id === task.id;
+    });
+    console.log(toDelete);
+    newList.splice(toDelete, 1);
     setList(newList);
   };
 
