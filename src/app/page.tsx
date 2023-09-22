@@ -26,7 +26,6 @@ export default function Home() {
     const toDelete = list.findIndex((item) => {
       return item.id === task.id;
     });
-    console.log(toDelete);
     newList.splice(toDelete, 1);
     setList(newList);
   };

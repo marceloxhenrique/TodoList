@@ -36,7 +36,7 @@ export default function ListItem({ item, task }: Props) {
           }`}
           htmlFor={`${item.id}`}
         >
-          {item.name} {item.id}
+          {item.name}
         </label>
       </section>
 
