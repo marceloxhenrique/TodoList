@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 import { Item } from "@/types/Item";
 import { BiTrash } from "react-icons/bi";
-type Task = {
-  id: number;
-  name: string;
-  done: boolean;
-};
 
 interface Props {
   item: Item;
-  task: (task: Task) => void;
+  task: (task: Item) => void;
 }
 
 export default function ListItem({ item, task }: Props) {

@@ -4,12 +4,6 @@ import { Item } from "@/types/Item";
 import ListItem from "@/components/ListItem";
 import AddItem from "@/components/AddItem";
 
-type Task = {
-  id: number;
-  name: string;
-  done: boolean;
-};
-
 export default function Home() {
   const [list, setList] = useState<Item[]>([
     { id: 1, name: "Go to the bakary", done: false },
@@ -26,7 +20,7 @@ export default function Home() {
     setList(newList);
   };
 
-  const deleteTask = (task: Task) => {
+  const deleteTask = (task: Item) => {
     const newList = [...list];
     newList.splice(task.id - 1, 1);
     setList(newList);
