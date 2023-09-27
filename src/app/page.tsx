@@ -31,7 +31,7 @@ export default function Home() {
   };
 
   return (
-    <main className="container mx-auto  flex min-h-screen flex-col items-center  p-10 bg-navy-blue">
+    <main className="container mx-auto max-w-4xl flex min-h-screen flex-col items-center  p-10 bg-navy-blue">
       <h1 className=" text-6xl font-bold border-2 border-transparent border-b-gray-500 w-full p-2 text-center  font-mono">
         Todo List
       </h1>

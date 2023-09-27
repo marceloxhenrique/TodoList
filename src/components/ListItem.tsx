@@ -21,11 +21,11 @@ export default function ListItem({ item, task }: Props) {
   };
 
   return (
-    <div className="flex w-full bg-input-bg-color p-2 rounded-md mb-4 items-center">
+    <div className="flex w-full bg-input-bg-color p-2 rounded-md mb-4 items-center overflow-y-auto">
       <section className=" flex items-center w-full">
         <input
           type="checkbox"
-          className={`w-6 h-6 mr-1 `}
+          className={`mr-1 h-6 w-6 p-2`}
           id={`${item.id}`}
           checked={isChecked}
           onChange={handleCheck}
@@ -36,7 +36,7 @@ export default function ListItem({ item, task }: Props) {
           }`}
           htmlFor={`${item.id}`}
         >
-          {item.name}
+          <p>{item.name}</p>
         </label>
       </section>
 
